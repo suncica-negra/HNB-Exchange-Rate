@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/css/styles.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+      <script type="text/javascript" src="/script.js"></script>
+      <title>HNB Exchange Rate</title>
+   </head>
+   <body>
+      <hr class="hr">
+      <div class="container">
+         <div class="row mb-3">
+            <div class="col-md-4 themed-grid-col">
+               <div class="pb-3">
+                  <div class="row">
+                     <div class="col-2 avatar"><img class="img" src="/user.jpg"></div>
+                     <div class="col-4 user">
+                        <div class="dropdown">
+                           <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User_1
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">User Data</a>
+                              <a class="dropdown-item" href="#">User Settings</a>
+                              <a class="dropdown-item" href="#">Logout</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row ">
+                  <div class="col-sm-6 margin">
+                     <label for="exampleInputDate">Insert Date</label>
+                     <form action="/filter" method="post">
+                        <div class="form-group">
+                           <input name="day" type="" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" maxlength="2">
+                           <input name="month" type="" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" maxlength="2">
+                           <input name="year" type="" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" maxlength="4">
+                        </div>
+                        <small id="date" class="form-text text-muted">
+                        Please enter number only. Eg: 01 03 2020</small>
+                        <button type="submit" name="button" class="btn-block">Exchange Rate</button>
+                  </div>
+                  </form>
+               </div>
+            </div>
+            <div class="col-md-8 themed-grid-col data">
+               <h2>HNB Exchange Rate</h2>
+               <p class="note">
+                  Press "Exchange Rate" to display the exchange rate list
+               </p>
+               <table>
+                  <tr>
+                     <th>Currency</th>
+                     <th>Unit Value</th>
+                     <th>Selling Rate</th>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+                  <tr>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <%- include("partials/footer"); -%>
