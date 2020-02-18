@@ -17,33 +17,69 @@
             <div class="col-md-4 themed-grid-col">
                <div class="pb-3">
                   <div class="row">
-                     <div class="col-2 avatar"><img class="img" src="/user.jpg"></div>
-                     <div class="col-4 user">
-                        <div class="dropdown">
-                           <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User_1
-                           </button>
-                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">User Data</a>
-                              <a class="dropdown-item" href="#">User Settings</a>
-                              <a class="dropdown-item" href="#">Logout</a>
-                           </div>
-                        </div>
+                     <div class="col-2 avatar">
+                        <a href="/">
+                        <img class="img" src="/slika.jpg">
+                        </a>
                      </div>
                   </div>
                </div>
                <div class="row ">
-                  <div class="col-sm-6 margin">
+                  <div class="col-sm-7 margin">
                      <label for="exampleInputDate">Insert Date</label>
                      <form action="/filter" method="post">
                         <div class="form-group">
-                           <input name="day" type="" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" maxlength="2">
-                           <input name="month" type="" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" maxlength="2">
-                           <input name="year" type="" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" maxlength="4">
+                           <input name="day" type="number" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" maxlength="2" min="1" max="31">
+                           <input name="month" type="number" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" maxlength="2" min="1" max="12">
+                           <input name="year" type="number" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" maxlength="4" min="2018" max="2020">
                         </div>
                         <small id="date" class="form-text text-muted">
-                        Please enter number only. Eg: 01 03 2020</small>
-                        <button type="submit" name="button" class="btn-block">Exchange Rate</button>
+                        Please enter number only.</small>
+                        <button type="submit" name="button" class="btn-block margin1">Exchange Rate</button>
                   </div>
+                  </form>
+                  <form action="/convert" method="post">
+                     <div class="form-group data">
+                        <label for="exampleFormControlSelect1">Currency converter</label>
+                        <input name="amount" class="form-control" type="number" step="0.01" placeholder="Quantity">
+                        <small id="date" class="form-text text-muted">from</small>
+                        <select name="from" class="form-control col-sm-12 margin" id="exampleFormControlSelect1">
+                           <option value="HRK">HRK</option>
+                           <option value="EUR">EUR</option>
+                           <option value="GBP">GBP</option>
+                           <option value="USD">USD</option>
+                           <option value="AUD">AUD</option>
+                           <option value="CAD">CAD</option>
+                           <option value="CZK">CZK</option>
+                           <option value="DKK">DKK</option>
+                           <option value="HUF">HUF</option>
+                           <option value="JPY">JPY</option>
+                           <option value="NOK">NOK</option>
+                           <option value="SEK">SEK</option>
+                           <option value="CHF">CHF</option>
+                           <option value="BAM">BAM</option>
+                           <option value="PLN">PLN</option>
+                        </select>
+                        <small id="date" class="form-text text-muted">to</small>
+                        <select name="to" class="form-control col-sm-12 margin" id="exampleFormControlSelect1">
+                           <option value="EUR">EUR</option>
+                           <option value="HRK">HRK</option>
+                           <option value="GBP">GBP</option>
+                           <option value="USD">USD</option>
+                           <option value="AUD">AUD</option>
+                           <option value="CAD">CAD</option>
+                           <option value="CZK">CZK</option>
+                           <option value="DKK">DKK</option>
+                           <option value="HUF">HUF</option>
+                           <option value="JPY">JPY</option>
+                           <option value="NOK">NOK</option>
+                           <option value="SEK">SEK</option>
+                           <option value="CHF">CHF</option>
+                           <option value="BAM">BAM</option>
+                           <option value="PLN">PLN</option>
+                        </select>
+                        <button type="submit" name="button" class="btn-block margin1">Convert</button>
+                     </div>
                   </form>
                </div>
             </div>

@@ -18,14 +18,78 @@ app.get("/", function (req, res) {
 });
 
 app.get("/filter", function (req, res) {
-	res.render("filter", {
-		code1: code1,
-		unit_value1: unit_value1,
-		selling_rate1: selling_rate1
+	if (400) {
+		res.redirect("/");
+	}
+});
+
+app.get("/convert", function (req, res) {
+	if (400) {
+		res.redirect("/");
+	}
+});
+
+app.post("/convert", function (req, res) {
+	var amount = req.body.amount;
+	var from = req.body.from;
+	var to = req.body.to;
+
+	request("http://hnbex.eu/api/v1/rates/daily/?date=YYYY-MM-DD", function (err, response, body) {
+		var data = JSON.parse(body);
+
+		function toTo(code) {
+			return code.currency_code === to;
+		}
+
+		function toFrom(code) {
+			return code.currency_code === from;
+		}
+
+		if (from === "HRK") {
+			var medianRate = data.find(toTo).median_rate;
+			var unitValue = data.find(toTo).unit_value;
+			var value = (amount / (medianRate / unitValue)).toFixed(2);
+
+			res.render("convert", {
+				amount: amount,
+				from: from,
+				value: value,
+				to: to
+			});
+		} else if (to === "HRK") {
+			var medianRate1 = data.find(toFrom).median_rate;
+			var unitValue1 = data.find(toFrom).unit_value;
+			var value = (amount * (medianRate1 / unitValue1)).toFixed(2);
+			res.render("convert", {
+				amount: amount,
+				from: from,
+				value: value,
+				to: to
+			});
+		} else {
+			var medianRate = data.find(toTo).median_rate;
+			var unitValue = data.find(toTo).unit_value;
+
+			var medianRate1 = data.find(toFrom).median_rate;
+			var unitValue1 = data.find(toFrom).unit_value;
+
+			var value = ((amount * (medianRate1 / unitValue1)) / (medianRate / unitValue)).toFixed(2);
+
+			res.render("convert", {
+				amount: amount,
+				from: from,
+				value: value,
+				to: to
+			});
+		}
+
 	});
+
+
 });
 
 app.post("/filter", function (req, res) {
+
 
 	if (req.body.day === "" || req.body.month === "" || req.body.year === "") {
 
@@ -237,6 +301,6 @@ app.post("/filter", function (req, res) {
 });
 
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
 	console.log("Server is running.")
 });

@@ -29,8 +29,8 @@ h2, h5 {
 
 .img {
 	float: right;
-	width: 62px;
-	height: 63px;
+	width: 250.4px;
+	height: 141.2px;
 	border: 1px solid #000000;
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -41,17 +41,18 @@ h2, h5 {
 	margin-top: 6px;
 }
 
-.user {
-	padding-left: 0;
-}
-
 .avatar {
 	padding-right: 0;
+	margin-left: 185px;
 }
 
 .margin {
 	margin-left: 0;
 	padding-left: 0;
+}
+
+.margin1 {
+	margin-top: 10px;
 }
 
 .data {
@@ -77,7 +78,6 @@ h2, h5 {
 
 .hr {
 	border: 0;
-    height: 1px;
+    height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-
