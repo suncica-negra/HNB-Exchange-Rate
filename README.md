@@ -4,6 +4,8 @@ HNB Exchange Rate
 Koristi API za povlačenje podataka o tečaju. 
 Preračunava iz jedne valute u drugu, izlistava tečaj.
 
+Korišteni alati: **HTML, CSS, JavaScript, Node.js, Express.js, EJS, API**
+
 Aplikacija je funkcionalna i online je: https://damp-reef-55288.herokuapp.com
 
 ![alt text](https://github.com/suncica-negra/HNB-Exchange-Rate/blob/master/public/exchange1.png)
