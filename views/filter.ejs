@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/css/styles.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+      <script type="text/javascript" src="/script.js"></script>
+      <title>HNB Exchange Rate</title>
+   </head>
+   <body>
+      <hr class="hr">
+      <div class="container">
+         <div class="row mb-3">
+            <div class="col-md-4 themed-grid-col">
+               <div class="pb-3">
+                  <div class="row">
+                     <div class="col-2 avatar">
+                        <a href="/">
+                        <img class="img" src="/slika.jpg">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row ">
+                  <div class="col-sm-7 margin">
+                     <label for="exampleInputDate">Insert Date</label>
+                     <form action="/filter" method="post">
+                        <div class="form-group">
+                           <input name="day" type="number" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" maxlength="2" min="1" max="31">
+                           <input name="month" type="number" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" maxlength="2" min="1" max="12">
+                           <input name="year" type="number" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" maxlength="4" min="2018" max="2020">
+                        </div>
+                        <small id="date" class="form-text text-muted">
+                        Please enter number only.</small>
+                        <button type="submit" name="button" class="btn-block margin1">Exchange Rate</button>
+                  </div>
+                  </form>
+                  <form action="/convert" method="post">
+                     <div class="form-group data">
+                        <label for="exampleFormControlSelect1">Currency converter</label>
+                        <input name="amount" class="form-control" type="number" step="0.01" placeholder="Quantity">
+                        <small id="date" class="form-text text-muted">from</small>
+                        <select name="from" class="form-control col-sm-12 margin" id="exampleFormControlSelect1">
+                           <option value="HRK">HRK</option>
+                           <option value="EUR">EUR</option>
+                           <option value="GBP">GBP</option>
+                           <option value="USD">USD</option>
+                           <option value="AUD">AUD</option>
+                           <option value="CAD">CAD</option>
+                           <option value="CZK">CZK</option>
+                           <option value="DKK">DKK</option>
+                           <option value="HUF">HUF</option>
+                           <option value="JPY">JPY</option>
+                           <option value="NOK">NOK</option>
+                           <option value="SEK">SEK</option>
+                           <option value="CHF">CHF</option>
+                           <option value="BAM">BAM</option>
+                           <option value="PLN">PLN</option>
+                        </select>
+                        <small id="date" class="form-text text-muted">to</small>
+                        <select name="to" class="form-control col-sm-12 margin" id="exampleFormControlSelect1">
+                           <option value="EUR">EUR</option>
+                           <option value="HRK">HRK</option>
+                           <option value="GBP">GBP</option>
+                           <option value="USD">USD</option>
+                           <option value="AUD">AUD</option>
+                           <option value="CAD">CAD</option>
+                           <option value="CZK">CZK</option>
+                           <option value="DKK">DKK</option>
+                           <option value="HUF">HUF</option>
+                           <option value="JPY">JPY</option>
+                           <option value="NOK">NOK</option>
+                           <option value="SEK">SEK</option>
+                           <option value="CHF">CHF</option>
+                           <option value="BAM">BAM</option>
+                           <option value="PLN">PLN</option>
+                        </select>
+                        <button type="submit" name="button" class="btn-block margin1">Convert</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div class="col-md-8 themed-grid-col data">
+               <h2>HNB Exchange Rate</h2>
+               <h5>on date: <%= date %> </h5>
+               <table>
+                  <tr>
+                     <th>Currency</th>
+                     <th>Unit Value</th>
+                     <th>Selling Rate</th>
+                  </tr>
+                  <%  data.forEach(function(data){ %>
+                  <tr>
+                     <td><%= data.currency_code %></td>
+                     <td><%= data.unit_value %></td>
+                     <td><%= data.selling_rate %></td>
+                  </tr>
+                  <% }) %>
+               </table>
+            </div>
+         </div>
+      </div>
+      <%- include("partials/footer"); -%>
