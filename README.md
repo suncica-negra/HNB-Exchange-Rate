@@ -6,7 +6,7 @@ It uses the API to pull currency exchange rate data. Converts from one currency 
 
 Tools Used: **HTML, CSS, JavaScript, Node.js, Express.js, EJS, API**
 
-The app is functional and is online: https://damp-reef-55288.herokuapp.com
+The app is functional and online: https://damp-reef-55288.herokuapp.com
 
 ********************************************
 
