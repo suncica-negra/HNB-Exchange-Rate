@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Converts from one currency to another, lists the exchange rate.">
+      <meta name="keywords" content="convert, currency, exchange rate">
+      <meta name="author" content="O.K.">
       <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="/css/styles.css">
       <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-      <script type="text/javascript" src="/script.js"></script>
+      <script src="/script.js"></script>
       <title>HNB Exchange Rate</title>
    </head>
    <body>
@@ -19,7 +22,7 @@
                   <div class="row">
                      <div class="col-2 avatar">
                         <a href="/">
-                        <img class="img" src="/slika.jpg">
+                        <img class="img" src="/slika.jpg" alt="novac_u_čaši">
                         </a>
                      </div>
                   </div>
@@ -29,21 +32,21 @@
                      <label for="exampleInputDate">Insert Date</label>
                      <form action="/filter" method="post">
                         <div class="form-group">
-                           <input name="day" type="number" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" maxlength="2" min="1" max="31">
-                           <input name="month" type="number" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" maxlength="2" min="1" max="12">
-                           <input name="year" type="number" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" maxlength="4" min="2018" max="2020">
+                           <input name="day" type="number" class="form-control" id="exampleInputDate" aria-describedby="date" placeholder="Day eg. 01" min="1" max="31">
+                           <input name="month" type="number" class="form-control" id="exampleInputMonth" placeholder="Month eg. 03" min="1" max="12">
+                           <input name="year" type="number" class="form-control" id="exampleInputYear" placeholder="Year eg. 2020" min="2018" max="2020">
                         </div>
-                        <small id="date" class="form-text text-muted">
+                        <small class="form-text text-muted">
                         Please enter number only.</small>
                         <button type="submit" name="button" class="btn-block margin1">Exchange Rate</button>
+                     </form>
                   </div>
-                  </form>
                   <form action="/convert" method="post">
                      <div class="form-group data">
-                        <label for="exampleFormControlSelect1">Currency converter</label>
+                        <label for="exampleFormControlSelect">Currency converter</label>
                         <input name="amount" class="form-control" type="number" step="0.01" placeholder="Quantity">
-                        <small id="date" class="form-text text-muted">from</small>
-                        <select name="from" class="form-control col-sm-12 margin" id="exampleFormControlSelect1">
+                        <small class="form-text text-muted">from</small>
+                        <select name="from" class="form-control col-sm-12 margin" id="exampleFormControlSelect">
                            <option value="HRK">HRK</option>
                            <option value="EUR">EUR</option>
                            <option value="GBP">GBP</option>
